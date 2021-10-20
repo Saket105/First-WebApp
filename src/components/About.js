@@ -7,22 +7,22 @@ export default function About() {
         backgroundColor:'white'
     })
 
-    const [buttonText, setButtonText] = useState("Enable Dark Mode")
+    // const [buttonText, setButtonText] = useState("Enable Dark Mode")
 
-    const handleDarkMode = ()=>{
-        if(myStyle.color === 'black'){
-            setMyStyle({
-                    color: 'white',
-                    backgroundColor:'black',
-                    border: '0.8px solid white'
-                })
-                setButtonText("Enable Light Mode")
-        }else{
-            setMyStyle({color: 'black',
-            backgroundColor:'white'})
-            setButtonText("Enable Dark Mode")
-        }
-    }
+    // const handleDarkMode = ()=>{
+    //     if(myStyle.color === 'black'){
+    //         setMyStyle({
+    //                 color: 'white',
+    //                 backgroundColor:'black',
+    //                 border: '0.8px solid white'
+    //             })
+    //             setButtonText("Enable Light Mode")
+    //     }else{
+    //         setMyStyle({color: 'black',
+    //         backgroundColor:'white'})
+    //         setButtonText("Enable Dark Mode")
+    //     }
+    // }
     return (
         <div className="container" style={myStyle}>
             <h1 className="my-3">About Us</h1>
@@ -75,7 +75,7 @@ export default function About() {
         </div>
         <div className="container my-3">
 
-        <button onClick={handleDarkMode} type="button" className="btn btn-dark">{buttonText}</button>
+        {/* <button onClick={handleDarkMode} type="button" className="btn btn-dark">{buttonText}</button> */}
         </div>
         </div>
     )
