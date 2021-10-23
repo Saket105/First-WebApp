@@ -13,7 +13,19 @@ function App() {
 
   const [mode, setMode] = useState('light');  //Whether dark mode is enable or not
   
-    const enableDark = ()=>{
+
+  const removedBodyClasses =()=>{
+    document.body.classList.remove('bg-light')
+    document.body.classList.remove('bg-dark')
+    document.body.classList.remove('bg-warning')
+    document.body.classList.remove('bg-success')
+    document.body.classList.remove('bg-primary')
+    document.body.classList.remove('bg-danger')
+  }
+
+    const enableDark = (cls)=>{
+      removedBodyClasses();
+      document.body.classList.add('bg-'+cls);
       if(mode=== 'light'){
         setMode('dark');
         document.body.style.backgroundColor = '#454545';

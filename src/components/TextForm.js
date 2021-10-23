@@ -1,50 +1,37 @@
 import React, {useState} from 'react'
 
-
-// console.log(useState('Enter text here2...'));
-
 export default function TextForm(props) {
     
 
     const handleUpClick =()=>{
-        // console.log("Upper case was clicked "+text);
         let newText = text.toUpperCase();
         setText(newText);
-        //props.showAlert("Converted to uppercase!", "success");
     }
 
     const handleLowClick =()=>{
-        // console.log("Upper case was clicked "+text);
+
         let newText = text.toLowerCase();
         setText(newText);
-        //props.showAlert("Converted to lowercase!", "success");
     }
     const handleClearClick =()=>{
-        // console.log("Upper case was clicked "+text);
         let newText = '';
         setText(newText);
-        //props.showAlert("Text Cleared!", "success");
     }
     const handleCopy =()=>{
-        // console.log("Upper case was clicked "+text);
         var text = document.getElementById("myBox");
         text.select();
         navigator.clipboard.writeText(text.value);
     }
 
     const handleCharCount =()=>{
-        // console.log("Upper case was clicked "+text)
         let newText = text.length;
         alert("Total number of character count = "+newText);
     }
     const handleOnChange =(event)=>{
-        // console.log("Handle on CHange");
         setText(event.target.value);
     }
 
     const [text,setText] = useState(' ');
-    //  setText("asdfghjkl"); //correct way to change the state
-    // text = "new text";//wrong way to change the state
 
     return (
         <>
