@@ -4,6 +4,7 @@ import React, {useState} from 'react'
 // console.log(useState('Enter text here2...'));
 
 export default function TextForm(props) {
+    
 
     const handleUpClick =()=>{
         // console.log("Upper case was clicked "+text);
@@ -55,16 +56,16 @@ export default function TextForm(props) {
                     color:props.mode==='dark'?'dark':'dark'}}
                  id="myBox" rows="9"></textarea>
         </div>
-            <button className="btn btn-primary mx-2 my-3" onClick={handleUpClick}>Convert to UpperCase</button>
-            <button className="btn btn-primary mx-2 my-3" onClick={handleLowClick}>Convert to LowerCase</button>
-            <button className="btn btn-primary mx-2 my-3" onClick={handleClearClick}>Clear Text</button>
-            <button className="btn btn-primary mx-2 my-3" onClick={handleCharCount}>Total Word Count</button>
-            <button className="btn btn-primary mx-2 my-3" onClick={handleCopy}>Copy Text</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-2 my-3" onClick={handleUpClick}>Convert to UpperCase</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-2 my-3" onClick={handleLowClick}>Convert to LowerCase</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-2 my-3" onClick={handleClearClick}>Clear Text</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-2 my-3" onClick={handleCharCount}>Total Word Count</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-2 my-3" onClick={handleCopy}>Copy Text</button>
     </div>
 
     <div className="container my-4" style={{color: props.mode==='dark'?'white':'black'}}>
         <h2>Your Text Summary</h2>
-        <p>Total words count = <strong>{text.split(" ").length}</strong></p>
+        <p>Total words count = <strong>{text.split(" ").filter((element)=>{return element.length!==0}).length}</strong></p>
         <p>Read Time = <strong>{ 0.008 * text.split(" ").length}</strong> minutes</p>
         <h2>Preview</h2>
         <p>{text.length>0?text:"Nothing to preview!"}</p>
